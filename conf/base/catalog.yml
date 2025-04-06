@@ -1,0 +1,35 @@
+dataset_kobe_dev:
+  type: pandas.ParquetDataset
+  filepath: data/raw/dataset_kobe_dev.parquet
+
+X_train:
+  type: pandas.ParquetDataset
+  filepath: data/processed/base_train_x.parquet
+
+X_test:
+  type: pandas.ParquetDataset
+  filepath: data/processed/base_test_x.parquet
+
+y_train:
+  type: pandas.ParquetDataset
+  filepath: data/processed/base_train_y.parquet
+
+y_test:
+  type: pandas.ParquetDataset
+  filepath: data/processed/base_test_y.parquet
+
+base_train:
+  type: pandas.ParquetDataset
+  filepath: data/processed/base_train.parquet
+  save_args:
+    index: false
+
+base_test:
+  type: pandas.ParquetDataset
+  filepath: data/processed/base_test.parquet
+  save_args:
+    index: false
+
+modelo_treinado:
+  type: pickle.PickleDataset
+  filepath: data/processed/modelo_treinado.pkl
