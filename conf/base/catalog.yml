@@ -33,3 +33,16 @@ base_test:
 modelo_treinado:
   type: pickle.PickleDataset
   filepath: data/processed/modelo_treinado.pkl
+
+dataset_kobe_prod:
+  type: pandas.ParquetDataset
+  filepath: data/raw/dataset_kobe_prod.parquet
+
+dataset_producao:
+  type: pandas.ParquetDataset
+  filepath: data/processed/data_filtered.parquet
+
+
+resultado_aplicacao:
+  type: pandas.ParquetDataset
+  filepath: data/processed/resultado_aplicacao.parquet

@@ -3,11 +3,9 @@ from sklearn.model_selection import train_test_split
 import mlflow
 
 def preparar_dados(df: pd.DataFrame) -> pd.DataFrame:
-    # Remove colunas irrelevantes para o modelo
     colunas_para_remover = ["team_id", "game_event_id", "game_id", "team_name"]
     df = df.drop(columns=colunas_para_remover, errors="ignore")
 
-    # Remove linhas com valores ausentes
     df = df.dropna()
 
     return df

@@ -6,7 +6,7 @@ def create_pipeline(**kwargs) -> Pipeline:
     return pipeline([
         node(
             func=treinar_modelos,
-            inputs="base_train",
+            inputs=["base_train", "base_test"],
             outputs="modelo_treinado",
             name="treinar_modelos_node"
         )
