@@ -26,15 +26,12 @@ def treinar_modelos(base_train: pd.DataFrame, base_test: pd.DataFrame):
         best_model = compare_models(include=["lr", "dt"])
         leaderboard = pull()
 
-        # Log leaderboard
         leaderboard.to_csv("leaderboard.csv", index=False)
         mlflow.log_artifact("leaderboard.csv")
 
-        # Log nome do melhor modelo
         best_model_name = leaderboard.iloc[0]["Model"]
         mlflow.log_param("melhor_modelo", best_model_name)
 
-        # Avaliação na base de teste
         pred = predict_model(best_model, data=base_test)
         y_true = pred['shot_made_flag']
         y_pred = pred['prediction_label']
